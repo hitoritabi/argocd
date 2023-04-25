@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,12 +15,13 @@ spec:
         training: gitops-basic
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        volumeMounts:
-          - name: config-volume
-            mountPath: /usr/share/nginx/html
-       volumes:
-         - name: config-volume
-           configMap:
-             name: myapp
+        - name: nginx
+          image: nginx:latest
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: config-volume
+          configMap:
+            name: myapp-config
+
