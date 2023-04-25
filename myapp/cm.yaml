@@ -4,5 +4,4 @@ metadata:
   name: myapp-config
 data:
   index.html: |
-              This is line 1 
-              and this is line of the multiline string!
+          "Hello, human user!"
